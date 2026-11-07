@@ -1,0 +1,153 @@
+{
+    "final_train_shape": [
+        1458,
+        287
+    ],
+    "final_test_shape": [
+        1459,
+        285
+    ],
+    "target_transformed": "LogSalePrice = log(1 + SalePrice)",
+    "skewed_features_transformed_count": 25,
+    "skewed_features_transformed": [
+        "LotFrontage",
+        "LotArea",
+        "MasVnrArea",
+        "BsmtFinSF1",
+        "BsmtFinSF2",
+        "BsmtUnfSF",
+        "1stFlrSF",
+        "2ndFlrSF",
+        "LowQualFinSF",
+        "GrLivArea",
+        "BsmtHalfBath",
+        "KitchenAbvGr",
+        "WoodDeckSF",
+        "OpenPorchSF",
+        "EnclosedPorch",
+        "3SsnPorch",
+        "ScreenPorch",
+        "PoolArea",
+        "MiscVal",
+        "distance_to_school_km",
+        "distance_to_transit_km",
+        "renovation_cost_usd",
+        "days_on_market",
+        "TotalLivingSF",
+        "TotalPorchSF"
+    ],
+    "vif_before_synthesis": [
+        {
+            "Feature": "GrLivArea",
+            "VIF": 117.33
+        },
+        {
+            "Feature": "2ndFlrSF",
+            "VIF": 86.81
+        },
+        {
+            "Feature": "1stFlrSF",
+            "VIF": 65.06
+        },
+        {
+            "Feature": "GarageCars",
+            "VIF": 5.5
+        },
+        {
+            "Feature": "GarageArea",
+            "VIF": 5.01
+        },
+        {
+            "Feature": "TotalBsmtSF",
+            "VIF": 3.39
+        },
+        {
+            "Feature": "TotRmsAbvGrd",
+            "VIF": 3.38
+        },
+        {
+            "Feature": "YearBuilt",
+            "VIF": 2.71
+        },
+        {
+            "Feature": "OverallQual",
+            "VIF": 2.67
+        },
+        {
+            "Feature": "FullBath",
+            "VIF": 2.2
+        },
+        {
+            "Feature": "amenity_composite_score",
+            "VIF": 1.71
+        },
+        {
+            "Feature": "days_on_market",
+            "VIF": 1.05
+        }
+    ],
+    "vif_after_synthesis": [
+        {
+            "Feature": "Neighborhood_MedianPricePerSF",
+            "VIF": 2.98
+        },
+        {
+            "Feature": "OverallQual",
+            "VIF": 2.97
+        },
+        {
+            "Feature": "PropertyAge",
+            "VIF": 2.7
+        },
+        {
+            "Feature": "TotalLivingSF",
+            "VIF": 2.41
+        },
+        {
+            "Feature": "TotalBathrooms",
+            "VIF": 1.95
+        },
+        {
+            "Feature": "GarageCars",
+            "VIF": 1.89
+        },
+        {
+            "Feature": "amenity_composite_score",
+            "VIF": 1.85
+        },
+        {
+            "Feature": "TotalPorchSF",
+            "VIF": 1.2
+        },
+        {
+            "Feature": "days_on_market",
+            "VIF": 1.05
+        },
+        {
+            "Feature": "mortgage_rate_pct",
+            "VIF": 1.01
+        }
+    ],
+    "top_mutual_information_features": {
+        "TotalLivingSF": 0.6793195374814052,
+        "OverallQual": 0.57521279056497,
+        "Neighborhood_MedianPricePerSF": 0.49617253747268286,
+        "GrLivArea": 0.48083326522302183,
+        "OverallGrade": 0.4369158745265791,
+        "TotalBsmtSF": 0.36719631047816303,
+        "GarageArea": 0.3666622116401612,
+        "GarageCars": 0.3653679294581629,
+        "YearBuilt": 0.3574881311231337,
+        "TotalBathrooms": 0.3452813479986703,
+        "PropertyAge": 0.3346420216855135,
+        "ExterQual_Ordinal": 0.3322242910740083,
+        "KitchenQual_Ordinal": 0.32715046797661196,
+        "BsmtQual_Ordinal": 0.3230077888066616,
+        "amenity_composite_score": 0.31086778343676835,
+        "1stFlrSF": 0.30242633070871516,
+        "distance_to_school_km": 0.2979284557934401,
+        "distance_to_hospital_km": 0.2796682709392999,
+        "MSSubClass": 0.27368369768837963,
+        "FullBath": 0.2668753960172583
+    }
+}

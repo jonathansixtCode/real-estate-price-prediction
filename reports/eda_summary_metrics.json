@@ -1,0 +1,90 @@
+{
+    "target_distribution": {
+        "raw_skewness": 1.8828757597682129,
+        "raw_kurtosis": 6.536281860064529,
+        "log_skewness": 0.12134661989685333,
+        "log_kurtosis": 0.809519155707878,
+        "median_saleprice": 163000.0,
+        "mean_saleprice": 180921.19589041095,
+        "std_saleprice": 79442.50288288663
+    },
+    "correlation_analysis": {
+        "top_correlated_features": {
+            "OverallQual": 0.7909816005838053,
+            "GrLivArea": 0.7086244776126515,
+            "GarageCars": 0.6404091972583519,
+            "GarageArea": 0.6234314389183622,
+            "TotalBsmtSF": 0.6135805515591943,
+            "1stFlrSF": 0.6058521846919153,
+            "FullBath": 0.5606637627484453,
+            "TotRmsAbvGrd": 0.5337231555820284,
+            "YearBuilt": 0.5228973328794967,
+            "YearRemodAdd": 0.5071009671113866,
+            "GarageYrBlt": 0.4863616774878596,
+            "MasVnrArea": 0.47749304709571444,
+            "distance_to_school_km": 0.47175892374711353,
+            "Fireplaces": 0.46692883675152763,
+            "distance_to_hospital_km": 0.44882423727422316
+        }
+    },
+    "outlier_diagnostics": {
+        "identified_extreme_outlier_ids": [
+            524,
+            1299
+        ]
+    },
+    "vif_table": [
+        {
+            "Feature": "GrLivArea",
+            "VIF": 125.82
+        },
+        {
+            "Feature": "2ndFlrSF",
+            "VIF": 87.14
+        },
+        {
+            "Feature": "1stFlrSF",
+            "VIF": 70.24
+        },
+        {
+            "Feature": "amenity_composite_score",
+            "VIF": 12.02
+        },
+        {
+            "Feature": "distance_to_school_km",
+            "VIF": 10.41
+        },
+        {
+            "Feature": "GarageCars",
+            "VIF": 5.33
+        },
+        {
+            "Feature": "GarageArea",
+            "VIF": 5.01
+        },
+        {
+            "Feature": "TotalBsmtSF",
+            "VIF": 3.62
+        },
+        {
+            "Feature": "TotRmsAbvGrd",
+            "VIF": 3.39
+        },
+        {
+            "Feature": "YearBuilt",
+            "VIF": 2.94
+        },
+        {
+            "Feature": "OverallQual",
+            "VIF": 2.74
+        },
+        {
+            "Feature": "FullBath",
+            "VIF": 2.19
+        },
+        {
+            "Feature": "days_on_market",
+            "VIF": 1.05
+        }
+    ]
+}

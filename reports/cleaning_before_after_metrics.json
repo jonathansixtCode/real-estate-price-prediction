@@ -1,0 +1,111 @@
+{
+    "raw_train_shape": [
+        1460,
+        94
+    ],
+    "raw_test_shape": [
+        1459,
+        93
+    ],
+    "raw_train_total_missing": 9809,
+    "raw_test_total_missing": 9918,
+    "duplicate_audit": {
+        "train_duplicates": 0,
+        "test_duplicates": 0
+    },
+    "typo_actions": {
+        "train": [
+            "Standardized 10 MSZoning 'C (all)' entries to 'C'."
+        ],
+        "test": [
+            "Fixed 1 impossible future GarageYrBlt (> 2026) by setting to YearBuilt.",
+            "Standardized 15 MSZoning 'C (all)' entries to 'C'."
+        ]
+    },
+    "imputation_summary": {
+        "structural_categoricals_to_none": [
+            "Alley",
+            "BsmtQual",
+            "BsmtCond",
+            "BsmtExposure",
+            "BsmtFinType1",
+            "BsmtFinType2",
+            "FireplaceQu",
+            "GarageType",
+            "GarageFinish",
+            "GarageQual",
+            "GarageCond",
+            "PoolQC",
+            "Fence",
+            "MiscFeature"
+        ],
+        "structural_numericals_to_zero": [
+            "BsmtFinSF1",
+            "BsmtFinSF2",
+            "BsmtUnfSF",
+            "TotalBsmtSF",
+            "BsmtFullBath",
+            "BsmtHalfBath",
+            "GarageCars",
+            "GarageArea",
+            "MasVnrArea"
+        ],
+        "lot_frontage_neighborhood_medians": {
+            "Blmngtn": 43.0,
+            "Blueste": 24.0,
+            "BrDale": 21.0,
+            "BrkSide": 52.0,
+            "ClearCr": 80.0,
+            "CollgCr": 70.0,
+            "Crawfor": 74.0,
+            "Edwards": 65.5,
+            "Gilbert": 65.0,
+            "IDOTRR": 60.0,
+            "MeadowV": 21.0,
+            "Mitchel": 73.0,
+            "NAmes": 73.0,
+            "NPkVill": 24.0,
+            "NWAmes": 80.0,
+            "NoRidge": 91.0,
+            "NridgHt": 88.5,
+            "OldTown": 60.0,
+            "SWISU": 60.0,
+            "Sawyer": 71.0,
+            "SawyerW": 66.5,
+            "Somerst": 73.5,
+            "StoneBr": 61.5,
+            "Timber": 85.0,
+            "Veenker": 68.0
+        },
+        "lot_frontage_imputation": "Neighborhood-grouped median from training set",
+        "mode_imputations": {
+            "Electrical": "SBrkr",
+            "MSZoning": "RL",
+            "Utilities": "AllPub",
+            "Exterior1st": "VinylSd",
+            "Exterior2nd": "VinylSd",
+            "KitchenQual": "TA",
+            "Functional": "Typ",
+            "SaleType": "WD"
+        }
+    },
+    "outlier_treatment": {
+        "dropped_records_count": 2,
+        "dropped_record_ids": [
+            524,
+            1299
+        ],
+        "initial_rows": 1460,
+        "retained_rows": 1458
+    },
+    "clean_train_shape": [
+        1458,
+        94
+    ],
+    "clean_test_shape": [
+        1459,
+        93
+    ],
+    "clean_train_missing_features": 0,
+    "clean_test_missing_features": 0
+}
