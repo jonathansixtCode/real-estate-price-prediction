@@ -1,0 +1,434 @@
+{
+  "input_shapes": {
+    "train": [
+      1458,
+      94
+    ],
+    "test": [
+      1459,
+      93
+    ]
+  },
+  "final_shapes": {
+    "train": [
+      1458,
+      63
+    ],
+    "test": [
+      1459,
+      61
+    ]
+  },
+  "derived_features": {
+    "created_features": [
+      "TotalSF",
+      "GrLivArea_SqM",
+      "TotalSF_SqM",
+      "Neighborhood_Median_PricePerSqM",
+      "PropertyAge",
+      "YearsSinceRemodel",
+      "IsNewBuild",
+      "GarageAge",
+      "IsRenovated",
+      "RemodelSpanYears",
+      "AmenityProximityScore",
+      "TotalBathrooms",
+      "TotalPorchSF",
+      "Qual_x_TotalSF",
+      "Qual_x_GrLivArea",
+      "LivingToLotRatio"
+    ],
+    "num_created_features": 16
+  },
+  "skewness_transformation": {
+    "target_skewness": {
+      "raw_skew": 1.8794,
+      "log1p_skew": 0.1215,
+      "reduction_pct": 93.54
+    },
+    "transformed_skewed_features": [
+      {
+        "feature": "MSSubClass",
+        "before_skew": 1.4056,
+        "after_skew": 0.2503
+      },
+      {
+        "feature": "LotFrontage",
+        "before_skew": 1.5462,
+        "after_skew": -0.9993
+      },
+      {
+        "feature": "LotArea",
+        "before_skew": 3.8102,
+        "after_skew": -0.6101
+      },
+      {
+        "feature": "MasVnrArea",
+        "before_skew": 2.6936,
+        "after_skew": 0.5058
+      },
+      {
+        "feature": "BsmtFinSF1",
+        "before_skew": 0.764,
+        "after_skew": -0.6175
+      },
+      {
+        "feature": "BsmtFinSF2",
+        "before_skew": 4.2475,
+        "after_skew": 2.5186
+      },
+      {
+        "feature": "1stFlrSF",
+        "before_skew": 0.8867,
+        "after_skew": 0.007
+      },
+      {
+        "feature": "2ndFlrSF",
+        "before_skew": 0.8121,
+        "after_skew": 0.2925
+      },
+      {
+        "feature": "LowQualFinSF",
+        "before_skew": 8.9957,
+        "after_skew": 7.4473
+      },
+      {
+        "feature": "GrLivArea",
+        "before_skew": 1.01,
+        "after_skew": -0.0709
+      },
+      {
+        "feature": "BsmtHalfBath",
+        "before_skew": 4.0959,
+        "after_skew": 3.9258
+      },
+      {
+        "feature": "KitchenAbvGr",
+        "before_skew": 4.4803,
+        "after_skew": 3.8623
+      },
+      {
+        "feature": "WoodDeckSF",
+        "before_skew": 1.5442,
+        "after_skew": 0.1564
+      },
+      {
+        "feature": "OpenPorchSF",
+        "before_skew": 2.3374,
+        "after_skew": -0.0229
+      },
+      {
+        "feature": "EnclosedPorch",
+        "before_skew": 3.084,
+        "after_skew": 2.1078
+      },
+      {
+        "feature": "3SsnPorch",
+        "before_skew": 10.2865,
+        "after_skew": 7.7215
+      },
+      {
+        "feature": "ScreenPorch",
+        "before_skew": 4.1147,
+        "after_skew": 3.1444
+      },
+      {
+        "feature": "PoolArea",
+        "before_skew": 15.9325,
+        "after_skew": 15.5017
+      },
+      {
+        "feature": "MiscVal",
+        "before_skew": 24.4349,
+        "after_skew": 5.1615
+      },
+      {
+        "feature": "distance_to_school_km",
+        "before_skew": 0.9056,
+        "after_skew": 0.3382
+      },
+      {
+        "feature": "distance_to_transit_km",
+        "before_skew": 1.1253,
+        "after_skew": 0.7593
+      },
+      {
+        "feature": "renovation_cost_usd",
+        "before_skew": 2.6103,
+        "after_skew": -0.1416
+      },
+      {
+        "feature": "days_on_market",
+        "before_skew": 1.724,
+        "after_skew": 0.0505
+      },
+      {
+        "feature": "GrLivArea_SqM",
+        "before_skew": 1.01,
+        "after_skew": -0.0632
+      },
+      {
+        "feature": "RemodelSpanYears",
+        "before_skew": 1.9532,
+        "after_skew": 0.8708
+      },
+      {
+        "feature": "TotalPorchSF",
+        "before_skew": 2.0094,
+        "after_skew": -0.5114
+      },
+      {
+        "feature": "Qual_x_TotalSF",
+        "before_skew": 1.3349,
+        "after_skew": -0.6035
+      },
+      {
+        "feature": "Qual_x_GrLivArea",
+        "before_skew": 1.4923,
+        "after_skew": -0.3587
+      },
+      {
+        "feature": "LivingToLotRatio",
+        "before_skew": 2.8525,
+        "after_skew": 2.365
+      }
+    ],
+    "num_skewed_transformed": 29
+  },
+  "encoding_and_scaling": {
+    "ordinal_encoded_cols": [
+      "ExterQual",
+      "ExterCond",
+      "BsmtQual",
+      "BsmtCond",
+      "HeatingQC",
+      "KitchenQual",
+      "FireplaceQu",
+      "GarageQual",
+      "GarageCond",
+      "PoolQC",
+      "BsmtExposure",
+      "BsmtFinType1",
+      "BsmtFinType2",
+      "Functional",
+      "GarageFinish",
+      "PavedDrive",
+      "Fence",
+      "LotShape",
+      "LandSlope",
+      "Utilities"
+    ],
+    "nominal_encoded_cols": [
+      "MSSubClass",
+      "MSZoning",
+      "Street",
+      "Alley",
+      "LandContour",
+      "LotConfig",
+      "Neighborhood",
+      "Condition1",
+      "Condition2",
+      "BldgType",
+      "HouseStyle",
+      "RoofStyle",
+      "RoofMatl",
+      "Exterior1st",
+      "Exterior2nd",
+      "MasVnrType",
+      "Foundation",
+      "Heating",
+      "CentralAir",
+      "Electrical",
+      "GarageType",
+      "MiscFeature",
+      "SaleType",
+      "SaleCondition",
+      "renovation_type",
+      "renovation_contractor",
+      "renovation_permit_id"
+    ],
+    "ohe_generated_features": 982,
+    "scaled_numeric_cols": 81,
+    "scaler_used": "robust",
+    "total_encoded_features": 1063
+  },
+  "multicollinearity_vif": {
+    "zero_variance_dropped": [],
+    "high_correlation_dropped": [
+      "GarageQual",
+      "GarageCond",
+      "PoolQC",
+      "amenity_composite_score",
+      "renovation_cost_usd",
+      "mortgage_rate_pct",
+      "local_price_index",
+      "unemployment_rate_pct",
+      "GrLivArea_SqM",
+      "TotalSF_SqM",
+      "PropertyAge",
+      "YearsSinceRemodel",
+      "IsRenovated",
+      "Qual_x_TotalSF",
+      "Qual_x_GrLivArea",
+      "BldgType_TwoFamilyConversion",
+      "HouseStyle_1.5StoryUnf",
+      "HouseStyle_SplitLevel",
+      "RoofStyle_Hip",
+      "Exterior2nd_CBlock",
+      "Exterior2nd_CemntBd",
+      "Exterior2nd_MetalSd",
+      "Exterior2nd_VinylSd",
+      "MasVnrType_nan",
+      "GarageType_nan",
+      "MiscFeature_Shed",
+      "MiscFeature_nan",
+      "SaleCondition_Partial",
+      "renovation_type_nan",
+      "renovation_contractor_nan",
+      "renovation_permit_id_PRM-1950-16570",
+      "renovation_permit_id_PRM-1950-32518",
+      "renovation_permit_id_PRM-1950-56876",
+      "renovation_permit_id_PRM-1995-67272",
+      "renovation_permit_id_PRM-2000-27290",
+      "renovation_permit_id_PRM-2005-23494",
+      "renovation_permit_id_PRM-2006-75824",
+      "renovation_permit_id_PRM-2008-81766"
+    ],
+    "vif_dropped": [
+      {
+        "feature": "TotalBathrooms",
+        "vif": 11866.38
+      },
+      {
+        "feature": "TotalSF",
+        "vif": 54.86
+      },
+      {
+        "feature": "GrLivArea",
+        "vif": 36.39
+      },
+      {
+        "feature": "YearBuilt",
+        "vif": 14.74
+      },
+      {
+        "feature": "LotArea",
+        "vif": 11.82
+      }
+    ],
+    "num_vif_dropped": 5,
+    "remaining_features_after_vif": 1020,
+    "max_remaining_vif": 9.62
+  },
+  "feature_selection": {
+    "total_candidate_features": 1020,
+    "selected_feature_count": 60,
+    "top_15_features": [
+      {
+        "feature": "OverallQual",
+        "composite_score": 1.0,
+        "rf_importance": 0.5693,
+        "mutual_info": 0.5735,
+        "abs_target_corr": 0.8214
+      },
+      {
+        "feature": "Neighborhood_Median_PricePerSqM",
+        "composite_score": 0.5232,
+        "rf_importance": 0.0587,
+        "mutual_info": 0.4817,
+        "abs_target_corr": 0.6177
+      },
+      {
+        "feature": "GarageCars",
+        "composite_score": 0.4525,
+        "rf_importance": 0.0329,
+        "mutual_info": 0.3638,
+        "abs_target_corr": 0.681
+      },
+      {
+        "feature": "TotalBsmtSF",
+        "composite_score": 0.4479,
+        "rf_importance": 0.0328,
+        "mutual_info": 0.3723,
+        "abs_target_corr": 0.6495
+      },
+      {
+        "feature": "GarageArea",
+        "composite_score": 0.4445,
+        "rf_importance": 0.0308,
+        "mutual_info": 0.3657,
+        "abs_target_corr": 0.6561
+      },
+      {
+        "feature": "ExterQual",
+        "composite_score": 0.4105,
+        "rf_importance": 0.0007,
+        "mutual_info": 0.3315,
+        "abs_target_corr": 0.6822
+      },
+      {
+        "feature": "KitchenQual",
+        "composite_score": 0.4041,
+        "rf_importance": 0.0023,
+        "mutual_info": 0.3254,
+        "abs_target_corr": 0.67
+      },
+      {
+        "feature": "1stFlrSF",
+        "composite_score": 0.4006,
+        "rf_importance": 0.0401,
+        "mutual_info": 0.3034,
+        "abs_target_corr": 0.6154
+      },
+      {
+        "feature": "BsmtQual",
+        "composite_score": 0.3885,
+        "rf_importance": 0.0026,
+        "mutual_info": 0.3259,
+        "abs_target_corr": 0.6169
+      },
+      {
+        "feature": "FullBath",
+        "composite_score": 0.3521,
+        "rf_importance": 0.0112,
+        "mutual_info": 0.2669,
+        "abs_target_corr": 0.5959
+      },
+      {
+        "feature": "GarageFinish",
+        "composite_score": 0.3447,
+        "rf_importance": 0.0024,
+        "mutual_info": 0.2601,
+        "abs_target_corr": 0.6056
+      },
+      {
+        "feature": "GarageAge",
+        "composite_score": 0.3418,
+        "rf_importance": 0.0045,
+        "mutual_info": 0.2707,
+        "abs_target_corr": 0.57
+      },
+      {
+        "feature": "distance_to_school_km",
+        "composite_score": 0.3329,
+        "rf_importance": 0.0049,
+        "mutual_info": 0.2959,
+        "abs_target_corr": 0.489
+      },
+      {
+        "feature": "distance_to_hospital_km",
+        "composite_score": 0.3301,
+        "rf_importance": 0.0043,
+        "mutual_info": 0.2793,
+        "abs_target_corr": 0.5147
+      },
+      {
+        "feature": "YearRemodAdd",
+        "composite_score": 0.3249,
+        "rf_importance": 0.0068,
+        "mutual_info": 0.2423,
+        "abs_target_corr": 0.566
+      }
+    ]
+  }
+}
