@@ -1,0 +1,11 @@
+{
+  "bundle_path": "models\\ames_housing_bundle.joblib",
+  "model_type": "LGBMRegressor",
+  "n_features": 60,
+  "cv_rmse_log": 0.13207,
+  "residual_std_log": 0.1321,
+  "empirical_95_interval_log": [
+    -0.30704,
+    0.24766
+  ]
+}
