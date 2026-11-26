@@ -4,7 +4,7 @@ services:
     runtime: python
     plan: free
     buildCommand: pip install -r app/requirements_deploy.txt
-    startCommand: uvicorn app.api:app --host 0.0.0.0 --port $PORT
+    startCommand: uvicorn c:\Users\Jonathan\Documents\Development\real-estate-price-prediction\app.api:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: MODEL_BUNDLE_PATH
         value: models/ames_housing_bundle.joblib
@@ -16,7 +16,7 @@ services:
     runtime: python
     plan: free
     buildCommand: pip install -r app/requirements_deploy.txt
-    startCommand: streamlit run app/streamlit_app.py --server.port $PORT --server.address 0.0.0.0
+    startCommand: streamlit run c:\Users\Jonathan\Documents\Development\real-estate-price-prediction\app/streamlit_app.py --server.port $PORT --server.address 0.0.0.0
     envVars:
       - key: MODEL_BUNDLE_PATH
         value: models/ames_housing_bundle.joblib

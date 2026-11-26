@@ -1,5 +1,5 @@
 {
-  "bundle_path": "models\\ames_housing_bundle.joblib",
+  "bundle_path": "c:\\Users\\Jonathan\\Documents\\Development\\real-estate-price-prediction\\models\\ames_housing_bundle.joblib",
   "model_type": "LGBMRegressor",
   "n_features": 60,
   "cv_rmse_log": 0.13207,
