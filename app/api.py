@@ -8,6 +8,7 @@ import os
 import sys
 import joblib
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -75,6 +76,11 @@ class ValuationResponse(BaseModel):
     confidence_range_usd: ConfidenceRange
     log_prediction: float
     model_type: str
+
+
+@app.get("/", include_in_schema=False)
+def root_redirect() -> RedirectResponse:
+    return RedirectResponse(url="/docs")
 
 
 @app.get("/health")

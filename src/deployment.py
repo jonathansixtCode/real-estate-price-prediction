@@ -2,8 +2,6 @@
 Module 6: Model Packaging, REST API & Interactive Demo Deployment
 Ames Housing Dataset — Production Inference & Deployment Utilities
 
-Open: http://localhost:8000/docs
-
 Provides modular functions for:
 - Training and serializing a complete inference bundle (model + feature schema + CV residual std)
 - Predicting house prices with calibrated 95% prediction/confidence intervals
@@ -209,6 +207,7 @@ def write_deployment_files(
         'import sys',
         'import joblib',
         'from fastapi import FastAPI, HTTPException',
+        'from fastapi.responses import RedirectResponse',
         'from pydantic import BaseModel, Field',
         '',
         'HERE = os.path.dirname(os.path.abspath(__file__))',
@@ -276,6 +275,11 @@ def write_deployment_files(
         '    confidence_range_usd: ConfidenceRange',
         '    log_prediction: float',
         '    model_type: str',
+        '',
+        '',
+        '@app.get("/", include_in_schema=False)',
+        'def root_redirect() -> RedirectResponse:',
+        '    return RedirectResponse(url="/docs")',
         '',
         '',
         '@app.get("/health")',
@@ -505,23 +509,27 @@ def write_deployment_files(
         "services:",
         "  - type: web",
         "    name: ames-housing-valuation-api",
-        "    env: python",
+        "    runtime: python",
         "    plan: free",
         "    buildCommand: pip install -r app/requirements_deploy.txt",
         f"    startCommand: uvicorn {output_dir}.api:app --host 0.0.0.0 --port $PORT",
         "    envVars:",
         "      - key: MODEL_BUNDLE_PATH",
         "        value: models/ames_housing_bundle.joblib",
+        "      - key: PYTHONPATH",
+        "        value: .",
         "",
         "  - type: web",
         "    name: ames-housing-valuation-ui",
-        "    env: python",
+        "    runtime: python",
         "    plan: free",
         "    buildCommand: pip install -r app/requirements_deploy.txt",
         f"    startCommand: streamlit run {output_dir}/streamlit_app.py --server.port $PORT --server.address 0.0.0.0",
         "    envVars:",
         "      - key: MODEL_BUNDLE_PATH",
         "        value: models/ames_housing_bundle.joblib",
+        "      - key: PYTHONPATH",
+        "        value: .",
     ]
     render_path = os.path.join(output_dir, "render.yaml")
     with open(render_path, "w", encoding="utf-8") as f:
