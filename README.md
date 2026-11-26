@@ -1,1 +1,1 @@
-# real-estate-price-prediction_js
+# real-estate-price-prediction

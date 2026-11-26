@@ -1,20 +1,24 @@
 services:
   - type: web
     name: ames-housing-valuation-api
-    env: python
+    runtime: python
     plan: free
     buildCommand: pip install -r app/requirements_deploy.txt
     startCommand: uvicorn app.api:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: MODEL_BUNDLE_PATH
         value: models/ames_housing_bundle.joblib
+      - key: PYTHONPATH
+        value: .
 
   - type: web
     name: ames-housing-valuation-ui
-    env: python
+    runtime: python
     plan: free
     buildCommand: pip install -r app/requirements_deploy.txt
     startCommand: streamlit run app/streamlit_app.py --server.port $PORT --server.address 0.0.0.0
     envVars:
       - key: MODEL_BUNDLE_PATH
         value: models/ames_housing_bundle.joblib
+      - key: PYTHONPATH
+        value: .

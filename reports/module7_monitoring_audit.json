@@ -1,0 +1,81 @@
+{
+  "model_type": "LGBMRegressor",
+  "baseline_cv_rmse_log": 0.13207091871350476,
+  "n_monitored_features": 60,
+  "n_drifted_features": 22,
+  "drifted_feature_share": 0.3667,
+  "top_drifted_features": [
+    {
+      "feature": "IsNewBuild",
+      "psi": 4.42882,
+      "ks_statistic": 0.433,
+      "ks_pvalue": 0.0
+    },
+    {
+      "feature": "2ndFlrSF",
+      "psi": 1.42859,
+      "ks_statistic": 0.5665,
+      "ks_pvalue": 0.0
+    },
+    {
+      "feature": "BsmtExposure",
+      "psi": 1.24683,
+      "ks_statistic": 0.358,
+      "ks_pvalue": 0.0
+    },
+    {
+      "feature": "BsmtCond",
+      "psi": 1.21737,
+      "ks_statistic": 0.4596,
+      "ks_pvalue": 0.0
+    },
+    {
+      "feature": "ExterQual",
+      "psi": 1.08606,
+      "ks_statistic": 0.3352,
+      "ks_pvalue": 0.0
+    }
+  ],
+  "trigger_decision": {
+    "retraining_recommended": true,
+    "active_alert_count": 3,
+    "active_alerts": [
+      "covariate_drift_share_exceeded",
+      "severe_feature_psi_exceeded",
+      "rolling_rmse_degradation_exceeded"
+    ],
+    "triggers": {
+      "covariate_drift_share_exceeded": {
+        "triggered": true,
+        "observed": 0.3667,
+        "threshold": 0.15,
+        "description": "Share of drifted features (36.7%) >= 15.0%"
+      },
+      "severe_feature_psi_exceeded": {
+        "triggered": true,
+        "observed": 4.42882,
+        "threshold": 0.25,
+        "description": "Maximum feature PSI (4.4288) >= 0.25"
+      },
+      "rolling_rmse_degradation_exceeded": {
+        "triggered": true,
+        "observed": 0.16518,
+        "threshold": 0.15849,
+        "description": "Latest batch RMSE_log (0.16518) >= 0.15849 (+20% over baseline 0.13207)"
+      },
+      "new_labeled_volume_ready": {
+        "triggered": true,
+        "observed": 960,
+        "threshold": 250,
+        "description": "Accumulated closed sales (960) >= 250 minimum retraining sample size"
+      }
+    },
+    "recommended_action": "TRIGGER RETRAINING PIPELINE: Re-run Modules 3\u20136 on combined historical + recent closed sales and validate challenger model before promotion."
+  },
+  "artifacts": {
+    "feature_drift_csv": "reports\\module7_feature_drift_report.csv",
+    "batch_metrics_csv": "reports\\module7_rolling_error_metrics.csv",
+    "monitoring_dashboard_html": "reports\\module7_monitoring_dashboard.html",
+    "dashboard_engine": "Built-in Governance HTML Dashboard"
+  }
+}
